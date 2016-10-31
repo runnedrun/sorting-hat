@@ -16,7 +16,7 @@ function chooseRandomHouse() {
 }
 
 sortButton.click(function() {
-  var name = nameInput.howDoIGetTheValueAgain()
+  var name = nameInput.val()
 
   addListItem("enrolledStudents", {
     name: name,
@@ -24,11 +24,12 @@ sortButton.click(function() {
   })
 })
 
-onNewListItem("enrolledStudents", function(student) {
-  console.log("got a new student!", student)
+onNewListItem("enrolledStudents", function(item) {
+  var house = item.house
+  var name = item.name
 
   var newStudentElement = $("<div></div>")
-  newStudentElement.html("hey, there's a n")	
+  newStudentElement.html("name: " + name + ", house: " + house)	
 
   enrolledStudentList.append(newStudentElement)
 })
