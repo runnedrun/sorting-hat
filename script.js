@@ -24,12 +24,11 @@ sortButton.click(function() {
   })
 })
 
-onNewListItem("enrolledStudents", function(item) {
-  var house = item.house
-  var name = item.name
+onNewListItem("enrolledStudents", function(student) {
+  console.log("got a new student!", student)
 
   var newStudentElement = $("<div></div>")
-  newStudentElement.html("name: " + name + ", house: " + house)	
+  newStudentElement.html("hey, there's a n")	
 
   enrolledStudentList.append(newStudentElement)
 })
